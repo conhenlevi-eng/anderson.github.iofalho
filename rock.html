@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roler Musicas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="rock.css">
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital@0;1&display=swap" rel="stylesheet">
+    <script>
+        function togglePlay(button) {
+            const card = button.closest('.music-card');
+            const audio = card.querySelector('audio');
+
+            if (audio.paused) {
+                // Pausar todos os outros áudios
+                document.querySelectorAll('audio').forEach(a => {
+                    a.pause();
+                    a.currentTime = 0;
+                    if (a !== audio) {
+                        const otherBtn = a.closest('.music-card').querySelector('.play-button');
+                        otherBtn.textContent = '▶';
+                    }
+                });
+
+                audio.play();
+                button.textContent = '❚❚'; // muda o botão para pause
+            } else {
+                audio.pause();
+                button.textContent = '▶'; // volta para play
+            }
+
+            audio.onended = () => {
+                button.textContent = '▶';
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <nav id="minhanavbar" class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid ">
+            <a href="index.html" class="navbar-brand">Roler Musicas</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="pagina1.html" class="nav-link">Gêneros</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="contantos.html" class="nav-link">Contatos</a>
+                    </li>
+                </ul>
+            </div><!--Fim div collapse-->
+        </div><!--Fim div container fluid-->
+    </nav>
+    <section class="section-pagode">
+        <div class="content">
+            <h1>ROCK</h1>
+            <p>
+                Veja as músicas de pagode que estão bombando! Ritmos que levantam o astral, batidas que grudam na mente
+                e aquele samba no pé que ninguém resiste.
+            </p>
+        </div>
+    </section>
+
+    <div class="cards-container">
+        <!-- Card 1 -->
+        <div class="music-card">
+            <div class="image-container">
+                <img src="imagens/echoes.png" alt="Echoes of the Empty Room">
+                <button class="play-button" onclick="togglePlay(this)">▶</button>
+                <audio src="audiomusicas/Echoes of the Empty Room.mp3"></audio>
+            </div>
+            <h3>Echoes of the Empty Room</h3>
+            <p>
+                Depois que ela partiu, o silêncio tomou conta da casa. Cada passo, cada suspiro, tudo parecia ecoar nas
+                paredes vazias daquele quarto onde antes compartilhavam sonhos e segredos.
+            </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="music-card">
+            <div class="image-container">
+                <img src="imagens/breaking.png" alt="Breaking the Chains">
+                <button class="play-button" onclick="togglePlay(this)">▶</button>
+                <audio src="audiomusicas/Breaking the Chains.mp3"></audio>
+            </div>
+            <h3>Breaking the Chains</h3>
+            <p>
+                Ele viveu anos preso em uma rotina sufocante, sentindo-se limitado por medos e expectativas que não eram
+                suas. Cada dia era uma batalha silenciosa contra as correntes invisíveis. </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="music-card">
+            <div class="image-container">
+                <img src="imagens/quebra de ilusão.png" alt="Quebra de IlusãoS">
+                <button class="play-button" onclick="togglePlay(this)">▶</button>
+                <audio src="audiomusicas"></audio>
+            </div>
+            <h3>Quebra de Ilusão</h3>
+            <p>
+                “Quebra de Ilusão” nasceu após uma experiência amarga de desilusão — não apenas amorosa, mas
+                existencial. O vocalista da banda, depois de anos acreditando em promessas vazias, amizades
+                interesseiras e um amor que parecia verdadeiro, viu tudo desmoronar de uma só vez.
+        </div>
+
+        <!-- Card 4 -->
+        <div class="music-card">
+            <div class="image-container">
+                <img src="imagens/Furia.png" alt="Fúria Urbana">
+                <button class="play-button" onclick="togglePlay(this)">▶</button>
+                <audio src="audiomusicas/Fúria Urbana.mp3"></audio>
+            </div>
+            <h3>Fúria Urbana</h3>
+            <p>
+                Nas ruas estreitas e iluminadas por postes quebrados, ecoa o som dos motores e dos passos apressados. A
+                cidade nunca dorme, mas também nunca acolhe.
+            </p>
+        </div>
+    </div>
+</body>

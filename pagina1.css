@@ -1,0 +1,12 @@
+ body {
+    background-image: url('imagens/Leonardo_Phoenix_10_Create_a_highquality_atmospheric_backgroun_1\ \(1\).jpg');
+    background-size: cover;         /* Faz a imagem cobrir tudo */
+    background-position: center;    /* Centraliza a imagem */
+    background-repeat: no-repeat;   /* Evita repetição */
+    height: 100vh;                  /* 100% da altura da tela */
+    margin: 0;                      /* Remove margens padrão */
+  }
+
+#minhanavbar{
+    background-color: #270C38;
+}

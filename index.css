@@ -1,0 +1,77 @@
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    background-image: url('imagens/Leonardo_Phoenix_10_Create_a_vibrant_highresolution_background_3\ \(1\).jpg');
+    background-size: cover;         /* Faz a imagem cobrir tudo */
+    background-position: center;    /* Centraliza a imagem */
+    background-repeat: no-repeat;   /* Evita repetição */
+    height: 100vh;                  /* 100% da altura da tela */
+    margin: 0;                      /* Remove margens padrão */
+
+}
+
+
+header{
+    background: url('imagens site de musica/Leonardo_Phoenix_10_Create_a_vibrant_highresolution_background_3\ \(1\).jpg') center/cover no-repeat;
+    height:750px;
+}
+
+#minhanavbar{
+    background-color: #270C38;
+}
+
+#paragrafoinicio{
+    margin-top: -330px;
+    font-family: 'Istok Web', sans-serif;
+    font-style: italic;
+    font-size: 32px;
+}
+
+.card-title{
+    text-align: center;
+}
+
+
+header .header-background{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1{
+    font-size: 3em;
+}
+.btn-explore {
+    background-color: #2e00b8;    /* Cor de fundo azul/roxo */
+    color: white;                 /* Cor do texto */
+    padding: 12px 24px;           /* Espaçamento interno */
+    border: none;                 /* Sem borda */
+    border-radius: 20px;          /* Canto arredondado */
+    font-size: 16px;              /* Tamanho da fonte */
+    font-family: sans-serif;     /* Fonte limpa */
+    text-decoration: none;       /* Remove sublinhado */
+    display: inline-block;       /* Permite padding e margem */
+    transition: background-color 0.3s ease; /* Efeito suave */
+  }
+  
+    /* Footer */
+    footer {
+        background: #000;
+        padding: 40px;
+      }
+      
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      #texto1{
+        color: white;
+      }
+
+      #texto2{
+        color: white;
+      }

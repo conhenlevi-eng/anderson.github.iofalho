@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roler Musicas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="classicá.css">
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital@0;1&display=swap" rel="stylesheet">
+    <script>
+        function togglePlay(button) {
+            const card = button.closest('.music-card');
+            const audio = card.querySelector('audio');
+
+            if (audio.paused) {
+
+                document.querySelectorAll('audio').forEach(a => {
+                    a.pause();
+                    a.currentTime = 0;
+                    if (a !== audio) {
+                        const otherBtn = a.closest('.music-card').querySelector('.play-button');
+                        otherBtn.textContent = '▶';
+                    }
+                });
+
+                audio.play();
+                button.textContent = '❚❚';
+            } else {
+                audio.pause();
+                button.textContent = '▶';
+            }
+
+            audio.onended = () => {
+                button.textContent = '▶';
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <nav id="minhanavbar" class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid ">
+            <a href="index.html" class="navbar-brand">Roler Musicas</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="pagina1.html" class="nav-link">Gêneros</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="contanto.html" class="nav-link">Contatos</a>
+                    </li>
+                </ul>
+            </div><!--Fim div collapse-->
+        </div><!--Fim div container fluid-->
+    </nav>
+    <section class="section-pagode">
+        <div class="content">
+            <h1>ClASSICÁ</h1>
+            <p>
+                Descubra as músicas clássicas que ecoam através do tempo! Sinfonias que emocionam, melodias que inspiram
+                e a grandeza que nunca sai de moda. Sinta a intensidade agora!
+            </p>
+        </div>
+    </section>
+
+    <div class="cards-container">
+        <!-- Card 1 -->
+        <div class="music-card">
+            <div class="image-container">
+                <img src="imagens/Majestic Serenade.png" alt="Majestic Serenade">
+                <button class="play-button" onclick="togglePlay(this)">▶</button>
+                <audio src="audiomusicas/Majestic Serenade.mp3"></audio>
+            </div>
+            <h3>Majestic Serenade</h3>
+            <p>
+                uma viagem sonora que eleva a alma. Notas que dançam como estrelas, harmonias que embalam o coração e a
+                grandeza da música clássica em sua forma mais pura </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="music-card">
+            <div class="image-container">
+                <img src="imagens/Under the Quiet Sky.png" alt="Under the Quiet Sky">
+                <button class="play-button" onclick="togglePlay(this)">▶</button>
+                <audio src="audiomusicas/Under the Quiet Sky.mp3"></audio>
+            </div>
+            <h3>Under the Quiet Sky</h3>
+            <p>
+                Dois amigos de infância crescem juntos, mas a vida começa a afastá-los: cidades diferentes, sonhos
+                diferentes, novos caminhos. Ainda assim, a conexão entre eles é tão forte que basta uma mensagem, uma
+                música ou uma lembrança para que tudo volte a ser como antes. </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="music-card">
+            <div class="image-container">
+                <img src="imagens/The Hero's Ascent.png" alt="The Hero's Ascent">
+                <button class="play-button" onclick="togglePlay(this)">▶</button>
+                <audio src="audiomusicas/The Hero's Ascent.mp3"></audio>
+            </div>
+            <h3>The Hero's Ascent</h3>
+            <p>
+                Um artista em ascensão enfrenta o peso da dúvida: será que é bom o suficiente? Será que está no caminho
+                certo? As vozes internas e externas tentam fazê-lo desistir, mas no fundo há uma chama que insiste em
+                brilhar. A música retrata esse conflito entre medo e coragem, mostrando que a dúvida pode até travar,
+                mas também pode ser o impulso para superar limites.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="music-card">
+            <div class="image-container">
+                <img src="imagens/Sunset Serenade.png" alt="Sunset Serenade">
+                <button class="play-button" onclick="togglePlay(this)">▶</button>
+                <audio src="audiomusicas/Sunset Serenade.mp3"></audio>
+            </div>
+            <h3>Sunset Serenade</h3>
+            <p>
+                Dois jovens vivem momentos de liberdade em uma noite de verão. Durante a semana, cada um está preso à
+                rotina, aos problemas e ao “seu próprio mundinho”, mas quando chega o fim de semana, eles fogem juntos.
+            </p>
+        </div>
+    </div>
+</body>

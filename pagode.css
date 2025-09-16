@@ -1,0 +1,113 @@
+body {
+    background-image: url('imagens/pagode.jpg');
+    background-size: cover;         /* Faz a imagem cobrir tudo */
+    background-position: center;    /* Centraliza a imagem */
+    background-repeat: no-repeat;   /* Evita repetição */
+    height: 100vh;                  /* 100% da altura da tela */
+    margin: 0;                      /* Remove margens padrão */
+  }
+
+#minhanavbar{
+    background-color: #270C38;
+}
+.section-pagode {
+    background-image: url('imagens/pagode-fundo.jpg'); /* Altere para o caminho real da sua imagem */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 60px 30px;
+    position: relative;
+  }
+
+  /* Opcional: camada escura para dar contraste */
+  .section-pagode::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+  }
+
+  .section-pagode .content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+
+  .section-pagode h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .section-pagode p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .music-card {
+    background-color: #b87108;
+    border-radius: 20px;
+    width: 220px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(226, 211, 1, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .music-card .image-container {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+
+  .music-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  .music-card h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .music-card p {
+    font-size: 14px;
+    line-height: 1.4;
+  }

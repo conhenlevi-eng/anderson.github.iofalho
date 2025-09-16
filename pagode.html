@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roler Musicas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="pagode.css">
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital@0;1&display=swap" rel="stylesheet">
+    <script>  
+    function togglePlay(button) {
+        const card = button.closest('.music-card');
+        const audio = card.querySelector('audio');
+    
+        if (audio.paused) {
+        
+          document.querySelectorAll('audio').forEach(a => {
+            a.pause();
+            a.currentTime = 0;
+            if (a !== audio) {
+              const otherBtn = a.closest('.music-card').querySelector('.play-button');
+              otherBtn.textContent = '▶';
+            }
+          });
+    
+          audio.play();
+          button.textContent = '❚❚'; 
+        } else {
+          audio.pause();
+          button.textContent = '▶'; 
+        }
+    
+        audio.onended = () => {
+          button.textContent = '▶';
+        };
+      }
+      </script>
+</head>
+
+<body>
+    <nav id="minhanavbar" class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid ">
+            <a href="index.html" class="navbar-brand">Roler Musicas</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="pagina1.html" class="nav-link active">Gêneros</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="contantos.html" class="nav-link">Contatos</a>
+                    </li>
+                </ul>
+            </div><!--Fim div collapse-->
+        </div><!--Fim div container fluid-->
+    </nav>
+    <section class="section-pagode">
+        <div class="content">
+            <h1>PAGODE</h1>
+            <p>
+                Veja as músicas de pagode que estão bombando no site! As batidas que vão animar seu dia e o samba no pé
+                que não pode faltar. Confira agora e sinta a vibe!
+            </p>
+        </div>
+    </section>
+
+    <div class="cards-container">
+        <!-- Card 1 -->
+        <div class="music-card">
+            <div class="image-container">
+                <img src="imagens/coração de barro.png" alt="Coração de Barro">
+                <button class="play-button" onclick="togglePlay(this)">▶</button>
+                <audio src="audiomusicas/Coração de Barro (2).mp3"></audio>
+            </div>
+            <h3>Coração de Barro</h3>
+            <p>
+                Era uma vez um homem que vivia preso às memórias de um amor perdido. No silêncio da sala, ele sentia o
+                vazio ao redor, onde antes a alegria reinava com o som do violão.
+            </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="music-card">
+            <div class="image-container">
+                <img src="imagens/Saudade do Meu Brasil.png" alt="Meu Brasil">
+                <button class="play-button" onclick="togglePlay(this)">▶</button>
+                <audio src="audiomusicas/Saudade do Meu Brasil.mp3"></audio>
+            </div>
+            <h3>Saudade do Meu Brasil</h3>
+            <p>
+                música nasceu da saudade profunda de um jovem que teve que deixar o Brasil para trabalhar no exterior.
+                Ele sentia falta do calor do povo, dos encontros com os amigos na roda de pagode, das festas na rua, do
+                cheiro do café coado e das paisagens que só o Brasil tem. </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="music-card">
+            <div class="image-container">
+                <img src="imagens/samba do brasi.png" alt="Samba do Meu Coração">
+                <button class="play-button" onclick="togglePlay(this)">▶</button>
+                <audio src="audiomusicas/Samba do Meu Coração.mp3"></audio>
+            </div>
+            <h3>Samba do Meu Coração</h3>
+            <p>
+                “Samba do Meu Coração” nasceu numa roda de samba em um bairro carioca, onde um jovem compositor estava
+                passando por um momento de transformação pessoal. Depois de um coração partido, ele encontrou no samba
+                um refúgio para expressar suas emoções e recomeçar.
+        </div>
+
+        <!-- Card 4 -->
+        <div class="music-card">
+            <div class="image-container">
+                <img src="imagens/Dois Corações em Samba.png" alt="Dois Corações em Samba">
+                <button class="play-button" onclick="togglePlay(this)">▶</button>
+                <audio src="audiomusicas/Dois Corações em Samba.mp3"></audio>
+            </div>
+            <h3>Dois Corações em Samba</h3>
+            <p>
+                “Dois Corações em Samba” foi inspirada numa história real (ou quase real!) que o compositor ouviu numa
+                roda de pagode. Dois amigos de infância, que cresceram juntos ouvindo samba e jogando conversa fora nas
+                festas do bairro, perceberam que o que sentiam um pelo outro ia além da amizade.
+            </p>
+        </div>
+    </div>
+</body>

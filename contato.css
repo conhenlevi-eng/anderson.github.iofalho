@@ -1,0 +1,20 @@
+    /* Footer */
+    footer {
+        background: #000;
+        padding: 40px;
+      }
+      
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      #texto1{
+        color: white;
+      }
+
+      #texto2{
+        color: white;
+      }
